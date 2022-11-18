@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Phone book project
 
-Things you may want to cover:
+This is a learning project. I wish to implement the gained knowledge to build a simple mock app that would represent an online phonebook which will store the information about user's friend circle ( developers have no friends, only code )
 
-* Ruby version
+## Things I want to review, and relearn with this project
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Ruby
+2. Ruby on Rails Framework
+3. MVC paradigm
+4. Git and GitHub Workflow
+5. (Optional) Docker set up
