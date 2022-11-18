@@ -8,6 +8,7 @@ class FriendsController < ApplicationController
 
   # GET /friends/1 or /friends/1.json
   def show
+    @friend = Frined.find(params[:id])
   end
 
   # GET /friends/new
@@ -17,6 +18,7 @@ class FriendsController < ApplicationController
 
   # GET /friends/1/edit
   def edit
+    @friend = Frined.find(params[:id])
   end
 
   # POST /friends or /friends.json
@@ -26,10 +28,12 @@ class FriendsController < ApplicationController
     respond_to do |format|
       if @friend.save
         format.html { redirect_to friend_url(@friend), notice: "Friend was successfully created." }
-        format.json { render :show, status: :created, location: @friend }
+        #format.json { render :show, status: :created, location: @friend }
+        redirect_to action: "index"
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @friend.errors, status: :unprocessable_entity }
+       # format.json { render json: @friend.errors, status: :unprocessable_entity }
+        redirect_to action: "index"
       end
     end
   end
@@ -39,10 +43,12 @@ class FriendsController < ApplicationController
     respond_to do |format|
       if @friend.update(friend_params)
         format.html { redirect_to friend_url(@friend), notice: "Friend was successfully updated." }
-        format.json { render :show, status: :ok, location: @friend }
+       # format.json { render :show, status: :ok, location: @friend }
+        redirect_to action: "show", :id => @friend
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @friend.errors, status: :unprocessable_entity }
+      #  format.json { render json: @friend.errors, status: :unprocessable_entity }
+        redirect_to action: "show", :id => @friend
       end
     end
   end
@@ -65,6 +71,6 @@ class FriendsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def friend_params
-      params.fetch(:friend, {})
+      params.fetch(:friend).permit(:first_name, :last_name, :email, :address, :birth_date, :phone)
     end
 end
