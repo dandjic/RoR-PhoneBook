@@ -10,6 +10,20 @@
       </ul>
     </div>
   <% end %>
+  <div class="column"> 
+      <%=label :first_name, "First name"%>
+      <%=text_field_tag (:first_name)%>
+      <%=label :last_name, "Last name"%>
+      <%=text_field_tag (:last_name)%>
+      <%=label :birth_date, "Date of birth"%>
+      <%=date_field_tag (:birth_date)%>
+      <%=label :address, "Where does he or she live?"%>
+      <%=text_field_tag (:address)%>
+      <%=label :email, "What is his or her email address?"%>
+      <%=email_field_tag (:email)%>
+      <%=label :phone, "Enter their phone number"%>
+      <%=text_field_tag (:phone)%>
+  </div>
 
   <div>
     <%= form.submit %>

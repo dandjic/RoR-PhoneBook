@@ -1,10 +1,15 @@
-<p style="color: green"> <%= notice %> </p>
+<p style="color: green"><%= notice %></p>
 
 <h1>Friends</h1>
 
 <div id="friends">
   <% @friends.each do |friend| %>
-    <%= render friend %>
+    <% if @friends.blank? %>
+      <p>You are a looser with no friends</p>
+      <%else%>
+      <%=render friend%> 
+   <%end%>
+
     <p>
       <%= link_to "Show this friend", friend %>
     </p>
