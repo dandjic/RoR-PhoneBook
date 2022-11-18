@@ -1,0 +1,47 @@
+<%= form_with(model: amici) do |form| %>
+  <% if amici.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(amici.errors.count, "error") %> prohibited this amici from being saved:</h2>
+
+      <ul>
+        <% amici.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :date_of_birth, style: "display: block" %>
+    <%= form.date_field :date_of_birth %>
+  </div>
+
+  <div>
+    <%= form.label :adress, style: "display: block" %>
+    <%= form.text_field :adress %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :years, style: "display: block" %>
+    <%= form.number_field :years %>
+  </div>
+
+  <div>
+    <%= form.label :phone, style: "display: block" %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
